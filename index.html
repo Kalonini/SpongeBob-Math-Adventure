@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponge Bob Math Adventure</title>
+    <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+    <!-- Main Game Container -->
+    <div id="game-container">
+        
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="screen active">
+            <img src="images/title.png" alt="SpongeBob Math Adventure" class="game-title-img">
+            <h2 class="grade-img">Grade 10 Mathematics</h2>
+            <div class="character-select">
+                <h3>Choose Your Character</h3>
+                <div class="character-options">
+                    <div class="character-card" data-character="SpongeBob">
+                    <div class="character-icon">
+                        <img src="images/SB 2.webp" alt="SpongeBob">
+                        </div>
+                        <p>SpongeBob</p>
+                    </div>
+                    <div class="character-card" data-character="Patrick">
+                    <div class="character-icon">
+                        <img src="images/Patrick 2.png" alt="Patrick">
+                        </div>
+                        <p>Patrick</p>
+                    </div>
+                    <div class="character-card" data-character="Sandy">
+                        <div class="character-icon">
+                        <img src="images/Sandy.png" alt="Sandy">
+                        </div>
+                        <p>Sandy</p>
+                    </div>
+                    <div class="character-card" data-character="Squidward">
+                        <div class="character-icon">
+                        <img src="images/Squidward.png" alt="Squidward">
+                        </div>
+                        <p>Squidward</p>
+                    </div>
+                </div>
+            </div>
+            <input type="text" id="player-name" placeholder="Enter your name" maxlength="20">
+            <button id="start-btn" class="btn-primary">Start Adventure!</button>
+        </div>
+
+        <!-- Character Introduction Modal -->
+        <div id="character-intro-modal" class="modal">
+            <div class="modal-content character-intro-content">
+                <span class="close">&times;</span>
+                <div class="character-intro-container">
+                    <div class="character-intro-left">
+                        <div class="character-intro-image">
+                            <img id="intro-character-img" src="" alt="Character">
+                        </div>
+                        <div class="intro-buttons">
+                            <button id="choose-character-btn" class="btn-primary">Choose This Character!</button>
+                            <button id="see-others-btn" class="btn-secondary">See Other Characters</button>
+                        </div>
+                    </div>
+                    <div class="character-intro-text">
+                        <h2 id="intro-character-name">Character Name</h2>
+                        <p id="intro-character-quote" class="character-quote">"Introduction quote here"</p>
+                        <p id="intro-character-description" class="character-description">Character description</p>
+                        <div class="character-traits">
+                            <h3>Learning Style:</h3>
+                            <ul id="intro-character-traits">
+                                <li>Trait 1</li>
+                                <li>Trait 2</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Game Screen -->
+        <div id="game-screen" class="screen">
+            
+            <!-- Player Stats Bar -->
+            <div class="stats-bar">
+                <div class="stat">
+                    <span class="stat-label">Player:</span>
+                    <span id="display-name">Player</span>
+                    <span id="display-character">🧽</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Current XP:</span>
+                    <span id="current-xp" class="xp-value">50</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Total XP:</span>
+                    <span id="total-xp" class="xp-value">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Level:</span>
+                    <span id="current-level">1</span>
+                </div>
+            </div>
+
+            <!-- Refresh and Change Character Buttons -->
+            <div class="stat player-stat">
+                <div class="player-actions">
+                    <button id="new-game-btn" class="icon-btn" title="Start Fresh Game">🆕</button>
+                    <button id="change-character-btn" class="icon-btn" title="Change Character">🎭</button>
+            </div>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <div class="tabs">
+                <button class="tab active" data-tab="levels">📚 Levels</button>
+                <button class="tab" data-tab="adventure">🎮 Adventure</button>
+                <button class="tab" data-tab="story">📖 Story Time</button>
+                <button class="tab" data-tab="progress">📊 Progress</button>
+            </div>
+
+            <!-- Levels Tab Content -->
+            <div id="levels-content" class="tab-content active">
+                <h2>Choose Your Setting</h2>
+                <div id="levels-list" class="levels-grid">
+                    <!-- Levels will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Questions Modal -->
+            <div id="questions-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2 id="level-title">Level Questions</h2>
+                    <div id="questions-container">
+                        <!-- Questions will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure Tab Content -->
+            <div id="adventure-content" class="tab-content">
+                <h2>🎮 Mini-Games - Earn XP!</h2>
+                <p class="info-text">Play these games to earn XP for unlocking questions</p>
+                <div id="adventure-list" class="adventure-grid">
+                    <!-- Adventures will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Adventure Game Modal -->
+            <div id="adventure-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="document.getElementById('adventure-modal').classList.remove('active')">&times;</span>
+                    <h2 id="adventure-title" style="text-align: center; color: #ffcc00; font-size: 2em; margin-bottom: 20px;">Mini-Adventure</h2>
+                    
+                    <div id="adventure-game-container">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Story Tab Content -->
+            <div id="story-content" class="tab-content">
+                <h2>📖 Story Time - Learn the Lesson</h2>
+                <p class="info-text">Read these stories to understand the math concepts</p>
+                <div id="story-list" class="story-grid">
+                    <!-- Stories will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Story Reader Modal -->
+            <div id="story-modal" class="modal">
+                <div class="modal-content story-reader">
+                    <span class="close">&times;</span>
+
+                    <!-- AUDIO PLAYER SECTION -->
+                    <div class="story-audio-player">
+                        <button id="story-audio-play-btn" class="audio-control-btn" title="Play Audio">
+                            ▶️ Play Story
+                        </button>
+                        <button id="story-audio-pause-btn" class="audio-control-btn" style="display: none;" title="Pause Audio">
+                            ⏸️ Pause
+                        </button>
+                        <div class="audio-progress-container">
+                            <span id="audio-current-time">0:00</span>
+                            <input type="range" id="audio-progress-bar" class="audio-progress-bar" min="0" max="100" value="0">
+                            <span id="audio-duration">0:00</span>
+                        </div>
+                    </div>
+
+                    <h2 id="story-title">Story</h2>
+                    <div id="story-content-display">
+                        <!-- Story content will load here -->
+                    </div>
+                    <div class="story-navigation">
+                        <button id="story-prev" class="btn-secondary">← Previous</button>
+                        <span id="story-progress">1 / 5</span>
+                        <button id="story-next" class="btn-primary">Next →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Tab Content -->
+            <div id="progress-content" class="tab-content">
+                <h2>📊 Your Progress</h2>
+                <div class="progress-stats">
+                    <div class="progress-card">
+                        <h3>Levels Completed</h3>
+                        <p class="big-stat" id="levels-completed">0 / 4</p>
+                    </div>
+                    <div class="progress-card">
+                        <h3>Questions Answered</h3>
+                        <p class="big-stat" id="questions-answered">0</p>
+                    </div>
+                    <div class="progress-card">
+                        <h3>Stories Read</h3>
+                        <p class="big-stat" id="stories-completed">0 / 4</p>
+                    </div>
+                    <div class="progress-card">
+                        <h3>XP Earned</h3>
+                        <p class="big-stat" id="total-xp-earned">0</p>
+                    </div>
+                </div>
+                <div class="achievements">
+                    <h3>🏆 Achievements</h3>
+                    <div id="achievements-list">
+                        <!-- Achievements will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="notification" class="notification"></div>
+
+    <!-- Load JavaScript Files -->
+    <script src="data.js"></script>
+    <script src="game.js"></script>
+
+    <!-- CHARACTER AUDIO -->
+    <audio id="spongebob-audio" src="audio/SpongeBob.mp3" preload="auto"></audio>
+    <audio id="patrick-audio" src="audio/Patrick.mp3" preload="auto"></audio>
+    <audio id="sandy-audio" src="audio/Sandy.mp3" preload="auto"></audio>
+    <audio id="squidward-audio" src="audio/Squidward.mp3" preload="auto"></audio>
+
+    <!-- STORY AUDIO (for story narration) -->
+    <audio id="story-audio-player" preload="auto"></audio>
+    
+</body>
+</html>
