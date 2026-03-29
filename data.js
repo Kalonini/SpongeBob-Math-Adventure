@@ -56,6 +56,7 @@ const ADVENTURES = [
 const STORIES = [
     {
         storyId: "story1",
+        settingId: 1,
         title: "The Krusty Krab Circle Kitchen",
         subject: "Illustrating Secants, Tangents, Segments, and Sectors",
         icon: "🍔",
@@ -150,11 +151,12 @@ const STORIES = [
             }
         ],
         unlockCondition: null,
-        xpReward: 30,
-        estimatedTime: 5
+        xpReward: 20,
+        estimatedTime: 4
     },
     {
         storyId: "story2",
+        settingId: 2,
         title: "Jellyfish Fields Theorem Adventure",
         subject: "Proving Theorems on Secants, Tangents, and Segments",
         icon: "🪼",
@@ -271,11 +273,12 @@ const STORIES = [
             type: "level_complete",
             levelId: 1
         },
-        xpReward: 35,
-        estimatedTime: 6
+        xpReward: 20,
+        estimatedTime: 4
     },
     {
         storyId: "story3",
+        settingId: 3,
         title: "Sandy's Circle Equation Laboratory",
         subject: "Center-Radius Form of Circle Equations",
         icon: "🌳",
@@ -380,11 +383,12 @@ const STORIES = [
             type: "level_complete",
             levelId: 2
         },
-        xpReward: 40,
-        estimatedTime: 6
+        xpReward: 20,
+        estimatedTime: 4
     },
     {
         storyId: "story4",
+        settingId: 4,
         title: "Goo Lagoon Coordinate Beach Party",
         subject: "Graphing and Solving Circle Problems on Coordinate Plane",
         icon: "🏖️",
@@ -513,8 +517,8 @@ const STORIES = [
             type: "level_complete",
             levelId: 3
         },
-        xpReward: 45,
-        estimatedTime: 6
+        xpReward: 20,
+        estimatedTime: 4
     }
 ];
 
@@ -528,7 +532,7 @@ const LEVELS = [
         icon: "🍔",
         requiredXP: 0,
         requiredPreviousLevel: null,
-        xpReward: 300,
+        xpReward: 20,
         storyId: "story_1",
         isLocked: false,
         description: "Learn to identify and illustrate parts of a circle while cooking at the Krusty Krab!"
@@ -538,11 +542,11 @@ const LEVELS = [
         levelName: "Jellyfish Fields",
         subject: "Proving Theorems on Secants, Tangents, and Segments",
         icon: "🪼",
-        requiredXP: 50,
-        requiredPreviousLevel: 1,
-        xpReward: 350,
+        requiredXP: 0,
+        requiredPreviousLevel: null,
+        xpReward: 20,
         storyId: "story_2",
-        isLocked: true,
+        isLocked: false,
         description: "Master circle theorems while catching jellyfish!"
     },
     {
@@ -550,11 +554,11 @@ const LEVELS = [
         levelName: "Sandy's Treedome",
         subject: "Center-Radius Form of Circle Equations",
         icon: "🌳",
-        requiredXP: 100,
-        requiredPreviousLevel: 2,
-        xpReward: 400,
+        requiredXP: 0,
+        requiredPreviousLevel: null,
+        xpReward: 20,
         storyId: "story_3",
-        isLocked: true,
+        isLocked: false,
         description: "Explore circle equations in Sandy's science lab!"
     },
     {
@@ -562,11 +566,11 @@ const LEVELS = [
         levelName: "Goo Lagoon Beach",
         subject: "Graphing and Solving Circle Problems on Coordinate Plane",
         icon: "🏖️",
-        requiredXP: 150,
-        requiredPreviousLevel: 3,
-        xpReward: 450,
+        requiredXP: 0,
+        requiredPreviousLevel: null,
+        xpReward: 20,
         storyId: "story_4",
-        isLocked: true,
+        isLocked: false,
         description: "Graph circles and solve real-world problems at the beach!"
     }
 ];
@@ -611,7 +615,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "Think about how many points of contact there are with the circle",
         character: "SpongeBob"
     },
@@ -649,7 +653,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "This line passes through the circle and comes out the other side",
         character: "Mr. Krabs"
     },
@@ -687,7 +691,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "Both endpoints must be on the circle's edge",
         character: "Squidward"
     },
@@ -725,7 +729,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "Think of pizza or pie slices - what do we call those wedge shapes?",
         character: "Patrick"
     },
@@ -763,7 +767,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "Not a pie slice - more like a watermelon slice with a straight edge",
         character: "SpongeBob"
     },
@@ -801,7 +805,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "It's the longest possible chord in any circle",
         character: "Sandy"
     },
@@ -877,7 +881,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "Think of 'rays' going outward from the center to the edge",
         character: "SpongeBob"
     },
@@ -915,7 +919,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "Count how many times a tangent touches the circle",
         character: "Sandy"
     },
@@ -953,7 +957,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "Think of the curve itself, not a straight line or region",
         character: "Patrick"
     },
@@ -1031,7 +1035,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Think about the formula relating diameter and radius",
         character: "SpongeBob"
     },
@@ -1107,7 +1111,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "What fraction is 90° of 360°?",
         character: "Sandy"
     },
@@ -1145,7 +1149,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Which chord passes through the center?",
         character: "Mr. Krabs"
     },
@@ -1183,7 +1187,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Think perpendicular - what angle do perpendicular lines make?",
         character: "Sandy"
     },
@@ -1221,7 +1225,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Each chord has 2 endpoints on the circle. How many total?",
         character: "Squidward"
     },
@@ -1259,7 +1263,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Arc measure equals central angle measure",
         character: "SpongeBob"
     },
@@ -1297,7 +1301,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "What does 'semi' mean? Like 'semifinal' or 'semiannual'",
         character: "Patrick"
     },
@@ -1335,7 +1339,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Each diameter = 2 radii. Count the total radii from center",
         character: "Mr. Krabs"
     },
@@ -1375,7 +1379,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "The angle at center and angle at P are supplementary (sum to 180°)",
         character: "Sandy"
     },
@@ -1413,7 +1417,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "The perpendicular from center bisects the chord. Then use Pythagorean theorem",
         character: "Sandy"
     },
@@ -1451,7 +1455,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Formula: Sector area = (angle/360°) × π × radius²",
         character: "Sandy"
     },
@@ -1489,7 +1493,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Distance from center = 5 cm. Use: (half-chord)² + 5² = 8²",
         character: "Sandy"
     },
@@ -1527,7 +1531,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Secant-Tangent: tangent² = external(external + internal)",
         character: "Sandy"
     },
@@ -1565,7 +1569,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "A regular hexagon creates 6 equal sectors. What's the central angle?",
         character: "Sandy"
     },
@@ -1603,7 +1607,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Use Pythagorean theorem for each chord separately, then add them",
         character: "Sandy"
     },
@@ -1641,7 +1645,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Formula: Area of sector = (1/2) × radius × arc length",
         character: "Sandy"
     },
@@ -1679,7 +1683,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Two-Secant: (external₁)(whole₁) = (external₂)(whole₂)",
         character: "Sandy"
     },
@@ -1717,7 +1721,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Radius ⊥ tangent (90°). Use triangle angle sum property",
         character: "Sandy"
     },
@@ -1759,7 +1763,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "Think about the relationship between a tangent and the radius at the touching point",
         character: "SpongeBob"
     },
@@ -1797,7 +1801,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "What property do the two tangent segments share?",
         character: "Patrick"
     },
@@ -1835,7 +1839,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "This theorem involves products of segments",
         character: "Sandy"
     },
@@ -1873,7 +1877,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "Both lines are secants from an external point",
         character: "Squidward"
     },
@@ -1911,7 +1915,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "One is a tangent, one is a secant, both from the same point",
         character: "SpongeBob"
     },
@@ -1949,7 +1953,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "A perpendicular radius divides the chord into equal parts",
         character: "Sandy"
     },
@@ -1987,7 +1991,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "Where is distance measured from in a circle?",
         character: "Mr. Krabs"
     },
@@ -2025,7 +2029,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "This special case always creates a right angle",
         character: "Patrick"
     },
@@ -2063,7 +2067,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "The inscribed angle is smaller than its intercepted arc",
         character: "SpongeBob"
     },
@@ -2101,7 +2105,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "Same arc means same angle measure",
         character: "Squidward"
     },
@@ -2141,7 +2145,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Multiply the segments of one chord, then solve for the unknown",
         character: "Sandy"
     },
@@ -2179,7 +2183,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Square the tangent length first",
         character: "SpongeBob"
     },
@@ -2217,7 +2221,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Tangents from the same external point are congruent",
         character: "Patrick"
     },
@@ -2255,7 +2259,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Use Pythagorean theorem, then multiply by 2",
         character: "Sandy"
     },
@@ -2293,7 +2297,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "The arc is twice the inscribed angle",
         character: "Squidward"
     },
@@ -2331,7 +2335,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Multiply external by whole for each secant, then solve",
         character: "Mr. Krabs"
     },
@@ -2369,7 +2373,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Inscribed angle = ½ × central angle for same arc",
         character: "Sandy"
     },
@@ -2407,7 +2411,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Tangent and radius are perpendicular at the point of tangency",
         character: "SpongeBob"
     },
@@ -2445,7 +2449,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Equidistant from center means equal in length",
         character: "Patrick"
     },
@@ -2483,7 +2487,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Inscribed angle = ½ × intercepted arc",
         character: "Squidward"
     },
@@ -2523,7 +2527,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Set up the product equation and solve",
         character: "Sandy"
     },
@@ -2561,7 +2565,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Use tangent² = external × whole, then find internal",
         character: "SpongeBob"
     },
@@ -2599,7 +2603,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Find the central angle first using supplementary angles",
         character: "Sandy"
     },
@@ -2637,7 +2641,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Chord is bisected by perpendicular from center",
         character: "Sandy"
     },
@@ -2675,7 +2679,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "First secant whole = 8 + 12 = 20. Now apply the theorem",
         character: "Mr. Krabs"
     },
@@ -2713,7 +2717,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Central angle = arc. Inscribed angle = ½ × arc",
         character: "Squidward"
     },
@@ -2751,7 +2755,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Find PB first, then subtract PA",
         character: "Sandy"
     },
@@ -2789,7 +2793,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "The 90° angle doesn't change the theorem - use products",
         character: "Sandy"
     },
@@ -2827,7 +2831,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Opposite angles in inscribed quadrilaterals are supplementary",
         character: "Squidward"
     },
@@ -2865,7 +2869,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Find central angle, then use trigonometry in the right triangle",
         character: "Sandy"
     },
@@ -2907,7 +2911,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "In (x - h)² + (y - k)², the center is (h, k) - use opposite signs",
         character: "Sandy"
     },
@@ -2945,7 +2949,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "The radius r = √(right side of equation)",
         character: "Sandy"
     },
@@ -2983,7 +2987,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "Center at origin means x² + y² = r²",
         character: "Sandy"
     },
@@ -3021,7 +3025,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "No (x - h) or (y - k) means center is at origin",
         character: "Patrick"
     },
@@ -3059,7 +3063,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "(x + 3) is the same as (x - (-3)), so use opposite signs",
         character: "Sandy"
     },
@@ -3097,7 +3101,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "Find the square root of the right side",
         character: "SpongeBob"
     },
@@ -3135,7 +3139,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "Use (x - h)² + (y - k)² = r² with h=5, k=-1, r=3",
         character: "Sandy"
     },
@@ -3173,7 +3177,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "Origin center → x² + y² = r²",
         character: "Patrick"
     },
@@ -3211,7 +3215,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "Center is (h, k) where h and k have opposite signs from equation",
         character: "Squidward"
     },
@@ -3249,7 +3253,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "Think about the standard form with center (h, k) and radius r",
         character: "Sandy"
     },
@@ -3289,7 +3293,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Use (x - h)² + (y - k)² = r² with h=-2, k=4, r=6",
         character: "Sandy"
     },
@@ -3327,7 +3331,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Find the distance from origin to the point - that's the radius",
         character: "Sandy"
     },
@@ -3365,7 +3369,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Center from signs, radius from square root",
         character: "Squidward"
     },
@@ -3403,7 +3407,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "(x + a) = (x - (-a)), so use opposite signs",
         character: "Patrick"
     },
@@ -3441,7 +3445,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Center is the midpoint of diameter: ((x₁+x₂)/2, (y₁+y₂)/2)",
         character: "Sandy"
     },
@@ -3479,7 +3483,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "x-coordinate is 0, y-coordinate is -3, square the radius",
         character: "Sandy"
     },
@@ -3517,7 +3521,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "No shifts in the equation means what about the center?",
         character: "Squidward"
     },
@@ -3555,7 +3559,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Find √144",
         character: "SpongeBob"
     },
@@ -3593,7 +3597,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Points have same x, so find difference in y-coordinates",
         character: "Sandy"
     },
@@ -3631,7 +3635,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "y = 0 means just y² (no shift), square the radius",
         character: "Patrick"
     },
@@ -3671,7 +3675,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Use distance formula: r² = (x₂ - x₁)² + (y₂ - y₁)²",
         character: "Sandy"
     },
@@ -3709,7 +3713,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Complete the square for x and y terms",
         character: "Sandy"
     },
@@ -3747,7 +3751,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Find diameter length using distance formula, then r = d/2",
         character: "Sandy"
     },
@@ -3785,7 +3789,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Complete the square: (x - a)² adds a², (y + b)² adds b²",
         character: "Sandy"
     },
@@ -3823,7 +3827,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Find both centers, then use distance formula",
         character: "Sandy"
     },
@@ -3861,7 +3865,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Tangent to axis means radius = distance from center to axis",
         character: "Sandy"
     },
@@ -3899,7 +3903,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "r² = (distance from center to origin)²",
         character: "Sandy"
     },
@@ -3937,7 +3941,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Complete square, find r², then take square root",
         character: "Sandy"
     },
@@ -3975,7 +3979,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "If distance > r₁ + r₂, circles are separate",
         character: "Sandy"
     },
@@ -4013,7 +4017,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Substitute both points into equation, solve system",
         character: "Sandy"
     },
@@ -4055,7 +4059,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "The center is (h, k) where you use opposite signs from the equation",
         character: "Larry"
     },
@@ -4093,7 +4097,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "The radius is the square root of the right side",
         character: "SpongeBob"
     },
@@ -4131,7 +4135,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "Find the center first, then determine which quadrant",
         character: "Sandy"
     },
@@ -4169,7 +4173,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "Substitute the coordinates and check if x² + y² = 36",
         character: "Patrick"
     },
@@ -4207,7 +4211,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "Center is (1, -2). Positive x, negative y means which quadrant?",
         character: "Squidward"
     },
@@ -4245,7 +4249,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "No shifts means center at origin. Find √100 for radius",
         character: "SpongeBob"
     },
@@ -4283,7 +4287,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "The closest point to the center is the center itself",
         character: "Sandy"
     },
@@ -4321,7 +4325,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "Look for the point of symmetry",
         character: "Larry"
     },
@@ -4359,7 +4363,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "Compare x² + y² with r². If less, it's inside",
         character: "SpongeBob"
     },
@@ -4397,7 +4401,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 3,
-        xpReward: 10,
+        xpReward: 5,
         hint: "Center is 2 units above x-axis, radius is 2 - does it touch?",
         character: "Sandy"
     },
@@ -4437,7 +4441,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Find center, then use distance formula",
         character: "Sandy"
     },
@@ -4475,7 +4479,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Find distance from center. If it equals radius, point is ON circle",
         character: "Larry"
     },
@@ -4513,7 +4517,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "On y-axis, x = 0. Solve for y",
         character: "SpongeBob"
     },
@@ -4551,7 +4555,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Use distance formula for r²: (x₂-x₁)² + (y₂-y₁)²",
         character: "Sandy"
     },
@@ -4589,7 +4593,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "An arc of a circle contains how many points?",
         character: "Squidward"
     },
@@ -4627,7 +4631,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Substitute each point and see which makes the equation true",
         character: "Patrick"
     },
@@ -4665,7 +4669,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Substitute y = 3 and solve for x",
         character: "Sandy"
     },
@@ -4703,7 +4707,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Tangent to x-axis means center is directly above, distance = radius",
         character: "Larry"
     },
@@ -4741,7 +4745,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Find the radius of each by taking square roots",
         character: "Squidward"
     },
@@ -4779,7 +4783,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 5,
-        xpReward: 15,
+        xpReward: 10,
         hint: "Center at origin. Use distance formula",
         character: "SpongeBob"
     },
@@ -4819,7 +4823,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Find distance to town, compare with 50 km range",
         character: "Sandy"
     },
@@ -4857,7 +4861,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Identify both centers, then find distance",
         character: "Larry"
     },
@@ -4895,7 +4899,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Distance to y-axis = |x-coordinate of center|",
         character: "Sandy"
     },
@@ -4933,7 +4937,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "One condition is ≤ (inside), other is ≥ (outside)",
         character: "SpongeBob"
     },
@@ -4971,7 +4975,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Shortest distance = (distance to center) - radius",
         character: "Sandy"
     },
@@ -5009,7 +5013,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Substitute the point: 6² + 8² = r²",
         character: "Patrick"
     },
@@ -5047,7 +5051,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Substitute y = 50, solve for x values, find distance between them",
         character: "Larry"
     },
@@ -5085,7 +5089,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Centers at (0,0) and (7,0), both r=5. They overlap but need advanced math",
         character: "Sandy"
     },
@@ -5123,7 +5127,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "90° counterclockwise: (x, y) becomes (-y, x)",
         character: "Sandy"
     },
@@ -5161,7 +5165,7 @@ const QUESTIONS = [
             }
         ],
         xpCost: 8,
-        xpReward: 25,
+        xpReward: 15,
         hint: "Maximum at point where circle touches line x + y = constant",
         character: "Sandy"
     },
@@ -5173,8 +5177,8 @@ const ACHIEVEMENTS = [
         achievementId: "first_question",
         name: "First Steps",
         description: "Answer your first question correctly",
-        icon: "🌟",
-        xpBonus: 20,
+        icon: "👣",
+        xpBonus: 10,
         requirement: { type: "questions_correct", count: 1 }
     },
     {
@@ -5182,7 +5186,7 @@ const ACHIEVEMENTS = [
         name: "Easy Rider",
         description: "Complete all 10 easy questions in a setting",
         icon: "⭐",
-        xpBonus: 50,
+        xpBonus: 10,
         requirement: { type: "difficulty_complete", difficulty: "easy", count: 10 }
     },
     {
@@ -5190,7 +5194,7 @@ const ACHIEVEMENTS = [
         name: "Rising Star",
         description: "Complete all 10 average questions in a setting",
         icon: "✨",
-        xpBonus: 75,
+        xpBonus: 20,
         requirement: { type: "difficulty_complete", difficulty: "average", count: 10 }
     },
     {
@@ -5198,7 +5202,7 @@ const ACHIEVEMENTS = [
         name: "Circle Champion",
         description: "Complete all 10 difficult questions in a setting",
         icon: "💫",
-        xpBonus: 100,
+        xpBonus: 30,
         requirement: { type: "difficulty_complete", difficulty: "difficult", count: 10 }
     },
     {
@@ -5206,7 +5210,7 @@ const ACHIEVEMENTS = [
         name: "Setting Master",
         description: "Complete all 30 questions in a setting",
         icon: "🏆",
-        xpBonus: 150,
+        xpBonus: 50,
         requirement: { type: "level_complete", count: 1 }
     },
     {
@@ -5214,7 +5218,7 @@ const ACHIEVEMENTS = [
         name: "Bookworm",
         description: "Read your first story",
         icon: "📖",
-        xpBonus: 15,
+        xpBonus: 10,
         requirement: { type: "stories_read", count: 1 }
     },
     {
@@ -5222,7 +5226,7 @@ const ACHIEVEMENTS = [
         name: "Knowledge Seeker",
         description: "Read all 4 stories",
         icon: "📚",
-        xpBonus: 60,
+        xpBonus: 50,
         requirement: { type: "stories_read", count: 4 }
     },
     {
@@ -5230,7 +5234,7 @@ const ACHIEVEMENTS = [
         name: "Perfectionist",
         description: "Get all 10 questions correct in a difficulty level on first try",
         icon: "💯",
-        xpBonus: 100,
+        xpBonus: 50,
         requirement: { type: "perfect_level", count: 1 }
     },
     {
@@ -5238,7 +5242,7 @@ const ACHIEVEMENTS = [
         name: "Bikini Bottom Geometry Master",
         description: "Complete all 4 settings (120 questions total)",
         icon: "👑",
-        xpBonus: 500,
+        xpBonus: 100,
         requirement: { type: "all_levels_complete" }
     },
     {
@@ -5246,7 +5250,7 @@ const ACHIEVEMENTS = [
         name: "Quick Learner",
         description: "Answer 10 questions correctly in a row",
         icon: "⚡",
-        xpBonus: 75,
+        xpBonus: 30,
         requirement: { type: "streak", count: 10 }
     }
 ];
